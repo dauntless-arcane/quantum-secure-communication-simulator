@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .slider {
+    background: linear-gradient(to right, #0f172a, #0891b2);
+  }
+  
+  .slider::-webkit-slider-thumb {
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #06b6d4, #3b82f6);
+    cursor: pointer;
+    border: 2px solid #0f172a;
+    box-shadow: 0 0 0 1px #06b6d4;
+  }
+  
+  .slider::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #06b6d4, #3b82f6);
+    cursor: pointer;
+    border: 2px solid #0f172a;
+    box-shadow: 0 0 0 1px #06b6d4;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent;
+  }
+  
+  .cyber-glow {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+  }
+  
+  .quantum-particle {
+    animation: quantum-float 3s ease-in-out infinite;
+  }
+  
+  @keyframes quantum-float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .entanglement-line {
+    animation: entanglement-pulse 2s ease-in-out infinite;
+  }
+  
+  @keyframes entanglement-pulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+  
+  .eve-warning {
+    animation: eve-flash 0.5s ease-in-out;
+  }
+  
+  @keyframes eve-flash {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+  
+  .pixel-highlight {
+    animation: pixel-pulse 1s ease-in-out infinite;
+  }
+  
+  @keyframes pixel-pulse {
+    0%, 100% { 
+      box-shadow: 0 0 5px rgba(6, 182, 212, 0.8);
+      opacity: 0.8;
+    }
+    50% { 
+      box-shadow: 0 0 15px rgba(6, 182, 212, 1);
+      opacity: 1;
+    }
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-cyan-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-cyan-500;
+}
